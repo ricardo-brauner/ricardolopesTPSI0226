@@ -1,3 +1,5 @@
+import filmes
+
 while True:
     print()
     print("======================")
@@ -18,6 +20,12 @@ while True:
     match opcao:
         case "1":
             print("Adicionar Filmes")
+            titulo = input("Digite o título do filme: ")
+            ano = input("Digite o ano do filme: ")
+            genero = input("Digite o gênero do filme: ")
+            realizador = input("Digite o realizador do filme: ")
+            nota = input("Digite a nota do filme: ")
+            filmes.adicionar_filme(titulo, ano, genero, realizador, nota)
         case "2":
             print("Listar Filmes")
         case "3":
