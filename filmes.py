@@ -23,3 +23,10 @@ def listar_filmes():
         print(f"Nota: {filme['nota']}")
         print()
         print("Filme listado com sucesso.")
+
+
+def pesquisar_filme(titulo):
+    for filme in filmes:
+        if filme["titulo"].lower() == titulo.lower():
+            return filme
+    return None

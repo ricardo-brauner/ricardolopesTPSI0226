@@ -30,6 +30,17 @@ while True:
             filmes.listar_filmes()
         case "3":
             print("Pesquisar Filmes")
+            titulo = input("Digite o título do filme que deseja pesquisar: ")
+            filme = filmes.pesquisar_filme(titulo)
+            if filme:
+                print(f"ID: {filme['id']}")
+                print(f"Título: {filme['titulo']}")
+                print(f"Ano: {filme['ano']}")
+                print(f"Gênero: {filme['genero']}")
+                print(f"Realizador: {filme['realizador']}")
+                print(f"Nota: {filme['nota']}")
+            else:
+                print("Filme não encontrado.")
         case "4":
             print("Atualizar Filme")
         case "5":
