@@ -19,7 +19,6 @@ while True:
 
     match opcao:
         case "1":
-            print("Adicionar Filmes")
             titulo = input("Digite o título do filme: ")
             ano = input("Digite o ano do filme: ")
             genero = input("Digite o gênero do filme: ")
@@ -28,6 +27,7 @@ while True:
             filmes.adicionar_filme(titulo, ano, genero, realizador, nota)
         case "2":
             print("Listar Filmes")
+            filmes.listar_filmes()
         case "3":
             print("Pesquisar Filmes")
         case "4":
