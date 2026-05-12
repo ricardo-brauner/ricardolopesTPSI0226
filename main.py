@@ -43,6 +43,16 @@ while True:
                 print("Filme não encontrado.")
         case "4":
             print("Atualizar Filme")
+            id = int(input("Digite o ID do filme que deseja atualizar: "))
+            titulo = input("Digite o novo título do filme ou pressione Enter: ")
+            ano = input("Digite o novo ano do filme ou pressione Enter: ")
+            genero = input("Digite o novo gênero do filme ou pressione Enter: ")
+            realizador = input("Digite o novo realizador do filme ou pressione Enter: ")
+            nota = input("Digite a nova nota do filme ou pressione Enter: ")
+            if filmes.atualizar_filme(id, titulo, ano, genero, realizador, nota):
+                print("Filme atualizado com sucesso.")
+            else:
+                print("Filme não encontrado.")
         case "5":
             print("Remover Filmes")
         case "6":

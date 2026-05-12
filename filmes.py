@@ -30,3 +30,20 @@ def pesquisar_filme(titulo):
         if filme["titulo"].lower() == titulo.lower():
             return filme
     return None
+
+
+def atualizar_filme(id, titulo=None, ano=None, genero=None, realizador=None, nota=None):
+    for filme in filmes:
+        if filme["id"] == id:
+            if titulo:
+                filme["titulo"] = titulo
+            if ano:
+                filme["ano"] = ano
+            if genero:
+                filme["genero"] = genero
+            if realizador:
+                filme["realizador"] = realizador
+            if nota:
+                filme["nota"] = nota
+            return True
+    return False
