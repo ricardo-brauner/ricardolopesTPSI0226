@@ -47,3 +47,11 @@ def atualizar_filme(id, titulo=None, ano=None, genero=None, realizador=None, not
                 filme["nota"] = nota
             return True
     return False
+
+
+def remover_filme(id):
+    for filme in filmes:
+        if filme["id"] == id:
+            filmes.remove(filme)
+            return True
+    return False

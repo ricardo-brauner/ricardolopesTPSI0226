@@ -55,6 +55,15 @@ while True:
                 print("Filme não encontrado.")
         case "5":
             print("Remover Filmes")
+            id = int(input("Digite o ID do filme que deseja remover: "))
+            confirmacao = input("Tem certeza que deseja remover este filme? (s/n): ")
+            if confirmacao == "s" or confirmacao == "S":
+                if filmes.remover_filme(id):
+                    print("Filme removido com sucesso.")
+                else:
+                    print("Filme não encontrado.")
+            else:
+                print("Remoção cancelada.")
         case "6":
             print("Ordenar Filmes")
         case "7":
