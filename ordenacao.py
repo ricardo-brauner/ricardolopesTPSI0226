@@ -8,3 +8,13 @@ def bubble_sort_filmes(filmes, criterio):
         if not trocou:
             break
     return filmes
+
+
+def selection_sort_filmes(filmes, criterio):
+    for i in range(len(filmes)):
+        min_index = i
+        for j in range(i + 1, len(filmes)):
+            if filmes[j][criterio] < filmes[min_index][criterio]:
+                min_index = j
+        filmes[i], filmes[min_index] = filmes[min_index], filmes[i]
+    return filmes
