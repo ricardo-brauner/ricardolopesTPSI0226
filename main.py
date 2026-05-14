@@ -1,4 +1,5 @@
 import filmes
+import ordenacao
 
 while True:
     print()
@@ -12,7 +13,6 @@ while True:
     print("5. Remover Filmes")
     print("6. Ordenar Filmes")
     print("7. Sair")
-
     print()
 
     opcao = input("Escolha uma opção: ")
@@ -25,9 +25,11 @@ while True:
             realizador = input("Digite o realizador do filme: ")
             nota = input("Digite a nota do filme: ")
             filmes.adicionar_filme(titulo, ano, genero, realizador, nota)
+
         case "2":
             print("Listar Filmes")
             filmes.listar_filmes()
+
         case "3":
             print("Pesquisar Filmes")
             titulo = input("Digite o título do filme que deseja pesquisar: ")
@@ -41,6 +43,7 @@ while True:
                 print(f"Nota: {filme['nota']}")
             else:
                 print("Filme não encontrado.")
+
         case "4":
             print("Atualizar Filme")
             id = int(input("Digite o ID do filme que deseja atualizar: "))
@@ -53,6 +56,7 @@ while True:
                 print("Filme atualizado com sucesso.")
             else:
                 print("Filme não encontrado.")
+
         case "5":
             print("Remover Filmes")
             id = int(input("Digite o ID do filme que deseja remover: "))
@@ -64,8 +68,40 @@ while True:
                     print("Filme não encontrado.")
             else:
                 print("Remoção cancelada.")
+
         case "6":
             print("Ordenar Filmes")
+            print("1. Ordenar por título")
+            print("2. Ordenar por ano")
+            print("3. Ordenar por gênero")
+            criterio = input("Escolha o critério de ordenação: ")
+            print("1. Bubble Sort")
+            print("2. Selection Sort")
+            metodo = input("Escolha o método de ordenação: ")
+
+            if criterio == "1":
+                criterio = "titulo"
+            elif criterio == "2":
+                criterio = "ano"
+            elif criterio == "3":
+                criterio = "genero"
+
+            if metodo == "1":
+                filmes_ordenados = ordenacao.bubble_sort_filmes(filmes.filmes, criterio)
+            elif metodo == "2":
+                filmes_ordenados = ordenacao.selection_sort_filmes(
+                    filmes.filmes, criterio
+                )
+            else:
+                print("Método de ordenação inválido.")
+                filmes_ordenados = []
+
+            print("Filmes ordenados:")
+            for filme in filmes_ordenados:
+                print(
+                    f"ID: {filme['id']}, Título: {filme['titulo']}, Ano: {filme['ano']}, Nota: {filme['nota']}"
+                )
+
         case "7":
             print("Obrigado, até a próxima.")
             break
