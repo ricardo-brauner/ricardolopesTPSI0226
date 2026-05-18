@@ -1,8 +1,12 @@
-def bubble_sort_filmes(filmes, criterio):
+def bubble_sort_filmes(filmes, criterio, ordem):
     while True:
         trocou = False
         for i in range(len(filmes) - 1):
-            if filmes[i][criterio] > filmes[i + 1][criterio]:
+            if ordem == "d":
+                condicao = filmes[i][criterio] < filmes[i + 1][criterio]
+            else:
+                condicao = filmes[i][criterio] > filmes[i + 1][criterio]
+            if condicao:
                 filmes[i], filmes[i + 1] = filmes[i + 1], filmes[i]
                 trocou = True
         if not trocou:

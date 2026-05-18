@@ -75,9 +75,7 @@ while True:
             print("2. Ordenar por ano")
             print("3. Ordenar por gênero")
             criterio = input("Escolha o critério de ordenação: ")
-            print("1. Bubble Sort")
-            print("2. Selection Sort")
-            metodo = input("Escolha o método de ordenação: ")
+            ordem = input("Escolha a ordem de ordenação (crescente/decrescente): ")
 
             if criterio == "1":
                 criterio = "titulo"
@@ -86,20 +84,14 @@ while True:
             elif criterio == "3":
                 criterio = "genero"
 
-            if metodo == "1":
-                filmes_ordenados = ordenacao.bubble_sort_filmes(filmes.filmes, criterio)
-            elif metodo == "2":
-                filmes_ordenados = ordenacao.selection_sort_filmes(
-                    filmes.filmes, criterio
-                )
-            else:
-                print("Método de ordenação inválido.")
-                filmes_ordenados = []
+            filmes_ordenados = ordenacao.bubble_sort_filmes(
+                filmes.filmes, criterio, ordem
+            )
 
             print("Filmes ordenados:")
             for filme in filmes_ordenados:
                 print(
-                    f"ID: {filme['id']}, Título: {filme['titulo']}, Ano: {filme['ano']}, Nota: {filme['nota']}"
+                    f"ID: {filme['id']}, Título: {filme['titulo']}, Ano: {filme['ano']}, Gênero: {filme['genero']}, Nota: {filme['nota']}"
                 )
 
         case "7":

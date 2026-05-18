@@ -22,7 +22,9 @@ def listar_filmes():
         print(f"Realizador: {filme['realizador']}")
         print(f"Nota: {filme['nota']}")
         print()
-        print("Filme listado com sucesso.")
+
+
+print("Filme listado com sucesso.")
 
 
 def pesquisar_filme(titulo):
